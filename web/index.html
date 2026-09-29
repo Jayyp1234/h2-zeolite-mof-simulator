@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Zeolite × MOF — Hydrogen at 195 K</title>
+<meta name="description" content="A ten-chapter guided simulator for hydrogen physisorption in zeolite 13X/5A and zeolite–MOF composites at 195 K.">
+<link rel="preload" href="fonts/ibm-plex-serif-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/ibm-plex-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script type="importmap">
+{"imports":{
+  "three":"./vendor/three.module.min.js",
+  "three/addons/controls/OrbitControls.js":"./vendor/OrbitControls.js"
+}}
+</script>
+</head>
+<body>
+
+<header class="top">
+  <div class="mark"><b>Zeolite<i>×</i>MOF</b><span>H₂ · 195 K</span></div>
+  <div class="readouts" id="ro"></div>
+  <button class="tbtn" id="paramsBtn">Parameters <kbd>P</kbd></button>
+</header>
+
+<aside class="rail" aria-label="Chapters">
+  <ol id="railList"></ol>
+  <div class="foot">PID-ZHS-FAB-002 · Rev C1<br>Analytical surrogate model<br><button data-replay>Replay intro</button></div>
+</aside>
+
+<main class="stage" id="stage"></main>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Parameters">
+  <button class="x" id="drawerX" aria-label="Close">×</button>
+  <h2>Parameters</h2>
+  <div class="sub">Every chapter recomputes from these. Defaults are the specification's own values.</div>
+  <div id="drawerBody"></div>
+</aside>
+
+<noscript><p style="padding:2rem">This simulator needs JavaScript.</p></noscript>
+<script src="model-constants.js"></script>
+<script src="physics.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>
